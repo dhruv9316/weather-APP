@@ -165,6 +165,11 @@ async function fetchSearchWeatherInfo(city){
     loadingScreen.classList.add("active");
     grantAccessContainer.classList.remove("active");
     userInfoContainer.classList.remove("active");
+    
+    if( errorScreen.classList.contains("active") ){
+        errorScreen.classList.remove("active");
+    }
+
 
     try {
         const response = await fetch(
